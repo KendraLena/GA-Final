@@ -4,7 +4,7 @@
 		this.el = document.querySelector( element );
 		this.init();
 	}
-	
+	// initialize function, wrapper, slides. 
 	Slideshow.prototype = {
 		init: function() {
 			this.wrapper = this.el.querySelector( ".slider-wrapper" );
@@ -20,6 +20,7 @@
 			this.action();
 			this.stopStart();	
 		},
+			// allows slides to fade in and out of each other
 		_slideTo: function( slide ) {
 			var currentSlide = this.slides[slide];
 			currentSlide.style.opacity = 1;
@@ -31,6 +32,7 @@
 				}
 			}
 		},
+			//sets time between slides
 		action: function() {
 			var self = this;
 			self.timer = setInterval(function() {
@@ -42,6 +44,7 @@
 				
 			}, 5000);
 		},
+		//makes it stop slideshow when you hover your mouse on it
 		stopStart: function() {
 			var self = this;
 			self.el.addEventListener( "mouseover", function() {
